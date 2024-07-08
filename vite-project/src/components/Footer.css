@@ -1,0 +1,27 @@
+#footer{
+    background-color: #000;
+    min-height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 200px;
+    align-content: flex-end;
+   
+}
+
+#container-menu{
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.item-footer{
+    color: #fff;
+}
+
+#copy{
+    color: #fff;
+    margin-left: 200px;
+}
+
