@@ -1,0 +1,42 @@
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px ;
+    margin: 10px 10px;
+    font-family: "Mulish", sans-serif;
+ font-size: 2rem;
+ margin-bottom: 20px;
+  font-weight: 900;
+
+}
+
+.signup{
+    font-size: 0.8rem;
+    color: black;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+
+.input  {
+    height: 30px;
+    width: 200px;
+    background-color: #e7e7e7;
+    border: none;
+}
+
+.submit{
+    padding: 10px 30px;
+    background-color: #e53939 ;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    transition: all 1s;
+    margin: 30px auto;
+}
+
+.submit:hover{
+     
+    scale:1.1;
+}

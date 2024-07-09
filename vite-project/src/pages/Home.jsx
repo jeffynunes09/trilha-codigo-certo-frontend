@@ -1,33 +1,21 @@
 // Home.js
 import React from 'react';
-import './Home.css';
+import imgHeader from  '../assets/image1.png'
+import './Home.css'
 
-import datas from '../datas.js';
-import CardProjetos from '../components/cardProjetos.jsx';
-import Navbar from '../components/Navbar.jsx';
-import Footer from '../components/Footer.jsx'
 
 function Home() {
-  const data = datas;
-
+  
   return (
   
-    
-    <div className='container-home'>
-<h2 id='title-page'>
-  BEM VINDO AO GERENCIADOR DE<span> PROJETOS</span>
-</h2>
-<div className='container-card'>
-  {data.map((projeto) => (
-    <CardProjetos 
-      key={projeto.id} 
-      name={projeto.name} 
-      description={projeto.description} 
-    />
-  ))}
-</div>
-</div>
-  
+   <div className='container-home'>
+    <h1 className='title-home'>
+    BEM VINDO AO GERENCIADOR DE<span><br></br> PROJETOS</span>
+    </h1>
+    <img className='header-img' src={imgHeader} alt="" />
+   </div>
+
+   
    
   );
 }
