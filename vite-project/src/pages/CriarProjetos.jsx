@@ -28,8 +28,10 @@ function CriarProjetos({ title, projeto }) {
     }
 
     try {
+      console.log('Dados a serem enviados:', { name, description, user });
+
       const response = projeto
-        ? await api.put(`/projects/${projeto.id}`, { name, description, user })
+        ? await api.put(`/projects/updated/${projeto._id}`, { name, description, user })
         : await api.post('/projects/create', { name, description, user });
 
       console.log('Resposta da API:', response.data);

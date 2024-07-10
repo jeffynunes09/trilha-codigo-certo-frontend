@@ -1,12 +1,11 @@
 // Projetos.js
 import React, { useState, useEffect, useContext } from 'react';
-
+import CardProjetos from '../components/cardProjetos';
 import api from './api';
 import './Projetos.css';
 import { UserContext } from '../context/UserContext';
 import { Link } from 'react-router-dom';
 import CriarProjetos from './CriarProjetos';
-import CardProjetos from '../components/cardProjetos';
 
 function Projetos() {
   // Estado para armazenar os projetos
@@ -51,7 +50,7 @@ function Projetos() {
         <div className='container-card'>
           {projetos.map((projeto) => (
             <CardProjetos
-              key={projeto.id}
+              key={projeto._id}
               name={projeto.name}
               description={projeto.description}
               nameButton1='EDITAR'
