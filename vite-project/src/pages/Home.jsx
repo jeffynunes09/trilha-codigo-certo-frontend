@@ -19,18 +19,13 @@ function Home() {
       <h1 className='title-home'>
         BEM VINDO AO GERENCIADOR DE<span><br /> PROJETOS</span>
       </h1>
-      {user ? (
-        <button className='submit' onClick={handleCreateProjectClick}>Criar Projeto</button>
-      ) : (
-        <></>
+      {user && (
+       <Link to='/projetos'> <button className='submit' >Criar Projeto</button></Link>
       )}
-      {showForm ? (
-        <CriarProjetos  title='CRIAR PROJETO' />
-      ) : (
         <img className='header-img' src={imgHeader} alt="" />
-      )}
+      
     </div>
-  );
-}
+  
 
+)}
 export default Home;

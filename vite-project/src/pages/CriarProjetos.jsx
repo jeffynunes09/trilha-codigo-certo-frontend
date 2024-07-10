@@ -30,17 +30,21 @@ function CriarProjetos({ title, projeto }) {
     try {
       console.log('Dados a serem enviados:', { name, description, user });
 
-      const response = projeto
-        ? await api.put(`/projects/updated/${projeto._id}`, { name, description, user })
-        : await api.post('/projects/create', { name, description, user });
+      let response;
+      if (projeto) {
+        response = await api.put(`/projects/updated/${projeto._id}`, { name, description, user });
+      } else {
+        response = await api.post('/projects/create', { name, description, user });
+      }
 
       console.log('Resposta da API:', response.data);
-
       navigate('/projetos');
+
     } catch (error) {
       console.error('Erro ao realizar cadastro:', error);
     }
   };
+
 
   return (
     <div>

@@ -33,14 +33,15 @@ function Projetos() {
   const handleEditClick = (projeto) => {
     setEditingProject(projeto); // Define o projeto sendo editado
   };
+  
 
   return (
     <div className='container-home'>
-      {!editingProject && (
+      {editingProject ? (
         <h2 id='title-page'>
           CRIE SEUS<span><br /> PROJETOS</span>
         </h2>
-      )}
+      ) :(<></>)}
       {user ? (
         <Link to='/newProject'> <button className='submit'>Criar Novo Projeto</button></Link>
       ) : (
@@ -60,8 +61,10 @@ function Projetos() {
               onEditClick={() => handleEditClick(projeto)} // Passa a função handleEditClick
             />
           ))}
+        
         </div>
       )}
+     
     </div>
   );
 }

@@ -24,6 +24,7 @@ function App() {
      <Route  path="/projetos" element={<Projetos />}/>
      <Route path="/signup" element={<Signup />} />
      <Route path="/newProject" element={<CriarProjetos />} />
+     <Route path="/editProject" element={<CriarProjetos />} />
 
      </Routes>
 
