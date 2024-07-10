@@ -6,10 +6,31 @@
     color: black;
 }
 .card {
-    border: 1px solid #ff0000;
+    border: 1px solid #e53939;
     width: 300px;
     height: 300px;
     padding: 10px;
     border-radius: 5px;
     box-shadow:  2px 5px rgba(0, 0, 0, 0.699);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  button{
+    border: none;
+    padding: 10px 10px;
+    border-radius: 6px;
+    margin: 10px 10px;
+  }
+#excluir{
+background-color: #e53939;
+
+  }
+
+  #editar{
+    background-color: #000000;
+   
+    color: #fff;
   }
