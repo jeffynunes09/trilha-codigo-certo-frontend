@@ -36,9 +36,11 @@ function Projetos() {
 
   return (
     <div className='container-home'>
-      <h2 id='title-page'>
-        CRIE SEUS<span><br /> PROJETOS</span>
-      </h2>
+      {!editingProject && (
+        <h2 id='title-page'>
+          CRIE SEUS<span><br /> PROJETOS</span>
+        </h2>
+      )}
       {user ? (
         <Link to='/newProject'> <button className='submit'>Criar Novo Projeto</button></Link>
       ) : (
