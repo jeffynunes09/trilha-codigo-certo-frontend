@@ -23,13 +23,20 @@
     padding: 10px 10px;
     border-radius: 6px;
     margin: 10px 10px;
+    transition: all 1s;
+    cursor: pointer;
   }
-#excluir{
+
+
+  button:hover{
+    scale: 1.1;
+  }
+.delete-button{
 background-color: #e53939;
 
   }
 
-  #editar{
+  .edit-button{
     background-color: #000000;
    
     color: #fff;

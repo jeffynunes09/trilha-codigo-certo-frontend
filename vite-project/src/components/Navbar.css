@@ -30,6 +30,8 @@ list-style: none;
     padding: 10px 10px;
     cursor: pointer;
     border-radius: 6px;
+    scale: 1;
+    transition: all 0.9s;
 }
 
 .back{
@@ -37,6 +39,10 @@ padding: 10px 10px;
 border-radius: 6px;
 background-color: #e53939;
 
+}
+.back:hover{
+    background-color: #000;
+    border: 1px solid  #e53939 ;
 }
 a{
     text-decoration: none;
