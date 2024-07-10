@@ -5,23 +5,24 @@ import api from './api';
 import Cookies from 'js-cookie';
 import { UserContext } from '../context/UserContext';
 
-function Login() {
+function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { setUser ,setToken} = useContext(UserContext);
+  const [name, setName] = useState('');
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   // Função para lidar com a submissão do formulário
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevenir o comportamento padrão do formulário
 
-    if (!email || !password) {
-      console.error('Email e senha são obrigatórios');
+    if (!email || !password || !name) {
+      console.error('Nome, email e senha são obrigatórios');
       return;
     }
 
     try {
-      const response = await api.post('/user/login', { email, password });
+      const response = await api.post('/user/create', { email, password, name });
       console.log('Resposta da API:', response.data);
       const { token, user } = response.data;
 
@@ -30,21 +31,28 @@ function Login() {
 
       // Atualiza o estado do usuário no contexto
       setUser(user);
-      setToken(token)
 
-      console.log('Login bem-sucedido');
+      console.log('Usuário criado com sucesso');
       navigate('/');
     } catch (error) {
-      console.error('Erro ao realizar login:', error);
+      console.error('Erro ao realizar cadastro:', error);
     }
   };
-
-
 
   return (
     <div>
       <form onSubmit={handleSubmit} className='container-form'>
         <h2>ENTRAR</h2>
+        <div>
+          <input
+            onChange={(e) => setName(e.target.value)}
+            placeholder='DIGITE O SEU NOME'
+            className='input'
+            type='text'
+            name='nome'
+            id='nome'
+          />
+        </div>
         <div>
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -65,9 +73,6 @@ function Login() {
             id='password'
           />
         </div>
-        <Link to='/signup'>
-          <p className='signup'>Crie sua conta</p>
-        </Link>
         <div className='container-button'>
           <button className='submit' type='submit'>Enviar</button>
         </div>
@@ -76,4 +81,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Signup;
