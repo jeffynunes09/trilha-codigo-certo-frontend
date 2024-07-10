@@ -8,7 +8,7 @@ import { UserContext } from '../context/UserContext';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { setUser ,setToken} = useContext(UserContext);
+  const { setUser} = useContext(UserContext);
   const navigate = useNavigate();
 
   // Função para lidar com a submissão do formulário
@@ -30,7 +30,7 @@ function Login() {
 
       // Atualiza o estado do usuário no contexto
       setUser(user);
-      setToken(token)
+     
 
       console.log('Login bem-sucedido');
       navigate('/');
