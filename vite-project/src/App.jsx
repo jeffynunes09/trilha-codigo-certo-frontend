@@ -8,6 +8,7 @@ import Login from "./pages/Login"
 import Projetos from "./pages/Projetos"
 import Signup from "./pages/Signup"
 import CriarProjetos from "./pages/CriarProjetos"
+import Projeto from "./pages/Projeto"
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
      <Route  path="/login" element={<Login />}/>
      <Route  path="/projetos" element={<Projetos />}/>
      <Route path="/signup" element={<Signup />} />
-     <Route path="/newProject" element={<CriarProjetos />} />
-     <Route path="/editProject" element={<CriarProjetos />} />
+     <Route path="/newProject/" element={<CriarProjetos />} />
+     <Route path="/Project/:id" element={<Projeto />} />
 
      </Routes>
 

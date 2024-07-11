@@ -5,7 +5,7 @@ import './CriarProjeto.css';
 import api from './api';
 import { UserContext } from '../context/UserContext';
 
-function CriarProjetos({ title, projeto }) {
+function CriarProjetos({ title, projeto, }) {
   const [name, setName] = useState(projeto ? projeto.name : '');
   const [description, setDescription] = useState(projeto ? projeto.description : '');
   const { user } = useContext(UserContext);
@@ -38,13 +38,11 @@ function CriarProjetos({ title, projeto }) {
       }
 
       console.log('Resposta da API:', response.data);
-      navigate('/projetos');
-
+     
     } catch (error) {
       console.error('Erro ao realizar cadastro:', error);
     }
   };
-
 
   return (
     <div>
