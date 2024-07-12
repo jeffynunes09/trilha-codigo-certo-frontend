@@ -42,7 +42,7 @@ function Signup() {
   return (
     <div>
       <form onSubmit={handleSubmit} className='container-form'>
-        <h2>ENTRAR</h2>
+        <h2>CADASTRAR</h2>
         <div>
           <input
             onChange={(e) => setName(e.target.value)}

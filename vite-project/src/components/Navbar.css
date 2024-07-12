@@ -5,7 +5,8 @@ nav{
     align-items: center;
     justify-content: space-around;
     margin-top: -10px;
-    width: 100%;
+   width: 100%;
+    overflow-x: hidden;
 }
 #logo{
     width: 90px;
@@ -21,7 +22,7 @@ list-style: none;
 }
 
 .items-nav{
-    font-family: "mulish";
+    font-family: "Mulish";
     font-weight: 800;
     color: #fff;
     padding: 10px 10px
@@ -63,6 +64,7 @@ a{
     background-color: #fff;
     margin: 3px 0;
     transition: 0.3s;
+    margin-right: 15px;
 }
 
 
@@ -70,20 +72,34 @@ a{
 @media (max-width: 768px) {
     .menu-toggle {
       display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  
+    nav{
+        justify-content: space-between;
+    }
+    #logo{
+        margin-left: 10px;
+    }
     .container-items-nav {
       display: none;
       flex-direction: column;
       position: absolute;
       top: 60px;
+      right: 0;
+      left: 0;
       border: none;
-      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
       background-color: #000;
     }
   
     .container-items-nav.open {
-      display: flex;align-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   
     .container-items-nav .items-nav {

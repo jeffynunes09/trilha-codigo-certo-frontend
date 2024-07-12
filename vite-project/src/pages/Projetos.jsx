@@ -55,35 +55,41 @@ function Projetos() {
       {user ? (
         <>
           {!editingProject && (
-            <h2 id='title-page'>
-              CRIE SEUS<span><br /> PROJETOS</span>
-            </h2>
+            <>
+              <h2 id='title-page'>
+                CRIE SEUS<span><br /> PROJETOS</span>
+              </h2>
+              <Link to='/newProject'><button className='submit'>Criar Novo Projeto</button></Link>
+            </>
           )}
-          <Link to='/newProject'> <button className='submit'>Criar Novo Projeto</button></Link>
+          {editingProject ? (
+            <CriarProjetos
+              title="EDITAR PROJETO"
+              projeto={editingProject}
+              onProjectUpdated={handleProjectUpdated}
+            />
+          ) : (
+            <div className='container-card'>
+              {projeto.map((projetos) => (
+                <CardProjetos
+                  key={projetos._id}
+                  name={projetos.name}
+                  description={projetos.description}
+                  nameButton1='EDITAR'
+                  nameButton='EXCLUIR'
+                  onEditClick={() => handleEditClick(projetos)}
+                  onDeleteClick={() => deleteProject(projetos._id)}
+                />
+              ))}
+            </div>
+          )}
         </>
       ) : (
-        <></>
-      )}
-      {editingProject ? (
-        <CriarProjetos
-          title="EDITAR PROJETO"
-          projeto={editingProject}
-          onProjectUpdated={handleProjectUpdated}
-        />
-      ) : (
-        <div className='container-card'>
-          {projeto.map((projetos) => (
-            <CardProjetos
-              key={projetos._id}
-              name={projetos.name}
-              description={projetos.description}
-              nameButton1='EDITAR'
-              nameButton='EXCLUIR'
-              onEditClick={() => handleEditClick(projetos)}
-              onDeleteClick={() => deleteProject(projetos._id)}
-            />
-          ))}
-        </div>
+        <>
+        <h1>
+          Pagina Não Encontrada
+        </h1>
+       </>
       )}
     </div>
   );

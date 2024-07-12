@@ -4,15 +4,17 @@ import logo from '../assets/logo.png';
 import { UserContext } from '../context/UserContext';
 import './Navbar.css';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const { user, setUser } = useContext(UserContext);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const navigate = useNavigate()
   function handleLogout() {
     Cookies.remove('token');
     setUser(null);
     setIsMobileMenuOpen(false); // Fecha o menu ao fazer logout
+    navigate('/')
   }
 
   function toggleMobileMenu() {
@@ -36,7 +38,7 @@ function Navbar() {
         {user ? (
           <>
             <Link to='/projetos' onClick={closeMobileMenu}><li className='items-nav'>PROJETOS</li></Link>
-            <li className='items-nav'>Olá, {user.email}</li>
+           {isMobileMenuOpen ? '' :  <li className='items-nav'>Olá, {user.email}</li>}
             <li className='items-nav back' onClick={handleLogout}>LOGOUT</li>
           </>
         ) : (
