@@ -11,6 +11,8 @@ import CriarProjetos from "./pages/CriarProjetos"
 import Projeto from "./pages/Projeto"
 
 function App() {
+
+
   return (
     <>
 
@@ -25,7 +27,7 @@ function App() {
      <Route  path="/projetos" element={<Projetos />}/>
      <Route path="/signup" element={<Signup />} />
      <Route path="/newProject/" element={<CriarProjetos />} />
-     <Route path="/Project/:id" element={<Projeto />} />
+     <Route path="/project/findProject/:id" element={<Projeto />} />
 
      </Routes>
 

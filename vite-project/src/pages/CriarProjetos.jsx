@@ -33,6 +33,7 @@ function CriarProjetos({ title, projeto, }) {
       let response;
       if (projeto) {
         response = await api.put(`/projects/updated/${projeto._id}`, { name, description, user });
+        navigate(`/project/findProject/${projeto._id}`)
       } else {
         response = await api.post('/projects/create', { name, description, user });
       }
