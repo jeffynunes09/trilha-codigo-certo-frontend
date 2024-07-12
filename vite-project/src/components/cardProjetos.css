@@ -41,3 +41,22 @@ background-color: #e53939;
    
     color: #fff;
   }
+
+  
+@media (max-width: 768px){
+
+ .card{
+  width: 200px;
+  height: 200px;
+ }
+
+ 
+ button{
+  border: none;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  font-size: 1rem;
+}
+
+
+}
