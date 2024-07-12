@@ -13,15 +13,39 @@ function Projeto() {
   const navigate = useNavigate();
   
   const response = async () => {
+   try {
     const project  = await api.get(`projects/findProject/${id}`)
     console.log(project.data.project)
     setDados(project.data.project)
+   } catch (error) {
+    console.log(error)
+    
+   }
     
   }
+  
+
+  const deleteProject =  async()=> {
+    const userConfirmed = window.confirm("Você tem certeza que deseja deletar este projeto?");
+    if(userConfirmed){
+      try {
+        const del = await api.delete(`projects/delete/${id}`)
+        console.log(del)
+        navigate('/projetos')
+      } catch (error) {
+        console.log(error)
+      }
+      
+    }else{
+      console.log('A exclusão foi cancelada pelo usuário.');
+    }
+  }
+
 
   useEffect(() => {
     
   response()
+
 },[])
 
 const handleClick = () => {
@@ -42,6 +66,7 @@ const handleClick = () => {
               description={dados.description}
               nameButton1='VOLTAR'
               nameButton='EXCLUIR'
+              onDeleteClick={() => deleteProject()}
               onEditClick={() => handleClick()}
             />
           

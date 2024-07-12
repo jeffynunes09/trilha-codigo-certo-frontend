@@ -23,18 +23,32 @@ function Projetos() {
     }
   };
 
-  useEffect(() => {
-    fetchProjetos();
-  }, []);
+  const deleteProject = async (id) => {
+    const userConfirmed = window.confirm("Você tem certeza que deseja deletar este projeto?");
+    if (userConfirmed) {
+      try {
+        await api.delete(`projects/delete/${id}`);
+        fetchProjetos(); // Atualiza a lista de projetos após a exclusão
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      console.log('A exclusão foi cancelada pelo usuário.');
+    }
+  };
 
   const handleEditClick = (projeto) => {
     setEditingProject(projeto); // Define o projeto sendo editado
   };
 
-  const handleProjectUpdated = (updatedProjeto) => {
+  const handleProjectUpdated = () => {
     setEditingProject(null); // Reseta o estado editingProject
     fetchProjetos(); // Atualiza a lista de projetos
   };
+
+  useEffect(() => {
+    fetchProjetos();
+  }, []);
 
   return (
     <div className='container-home'>
@@ -66,6 +80,7 @@ function Projetos() {
               nameButton1='EDITAR'
               nameButton='EXCLUIR'
               onEditClick={() => handleEditClick(projetos)}
+              onDeleteClick={() => deleteProject(projetos._id)}
             />
           ))}
         </div>

@@ -36,6 +36,7 @@ function CriarProjetos({ title, projeto, }) {
         navigate(`/project/findProject/${projeto._id}`)
       } else {
         response = await api.post('/projects/create', { name, description, user });
+         navigate(`/projetos`)
       }
 
       console.log('Resposta da API:', response.data);

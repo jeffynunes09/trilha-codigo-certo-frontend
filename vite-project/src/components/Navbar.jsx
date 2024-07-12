@@ -29,6 +29,7 @@ function Navbar() {
           <>
           
           <Link to='/login'><li className='items-nav back'>LOGIN</li></Link>
+          <Link to='/signup'><li className='items-nav back'>CADASTRAR</li></Link>
           </>
         )}
       </ul>

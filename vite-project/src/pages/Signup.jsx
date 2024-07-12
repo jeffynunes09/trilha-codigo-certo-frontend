@@ -33,7 +33,7 @@ function Signup() {
       setUser(user);
 
       console.log('Usuário criado com sucesso');
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.error('Erro ao realizar cadastro:', error);
     }

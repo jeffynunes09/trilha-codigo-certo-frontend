@@ -4,6 +4,8 @@ nav{
     background-color: #000;
     align-items: center;
     justify-content: space-around;
+    margin-top: -10px;
+    width: 100%;
 }
 #logo{
     width: 90px;
