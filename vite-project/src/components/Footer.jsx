@@ -2,6 +2,7 @@ import React from 'react'
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaSquareGithub } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 import './Footer.css'
 function Footer() {
   return (
