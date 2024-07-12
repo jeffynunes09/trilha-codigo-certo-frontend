@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 
 
 const api = axios.create({
-    baseURL : 'http://localhost:4000'
+    baseURL : 'https://trilha-fullstack-gerenciador-projetos.onrender.com'
 })
 
 api.interceptors.request.use((config) => {
