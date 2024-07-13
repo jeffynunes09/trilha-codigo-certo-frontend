@@ -45,17 +45,25 @@ background-color: #e53939;
   
 @media (max-width: 768px){
 
- .card{
-  width: 200px;
-  height: 200px;
- }
-
  
- button{
+  button{
   border: none;
-  padding: 5px 5px;
+  padding: 10px 15px;
   margin: 5px 5px;
-  font-size: 1rem;
+  font-size: 20px;
+}
+.card {
+  margin: 5px auto;
+  border: 1px solid #e53939;
+  width: 300px;
+  height: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow:  2px 5px rgba(0, 0, 0, 0.699);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 

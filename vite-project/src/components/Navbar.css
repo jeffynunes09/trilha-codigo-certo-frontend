@@ -1,11 +1,11 @@
 nav{
     display: flex;
-    height: 100px;
+    min-height: 100px;
     background-color: #000;
     align-items: center;
     justify-content: space-around;
     margin-top: -10px;
-   width: 100%;
+    width: 100%;
     overflow-x: hidden;
 }
 #logo{
@@ -67,54 +67,57 @@ a{
     margin-right: 15px;
 }
 
-
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .menu-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    nav{
-        justify-content: space-between;
-    }
-    #logo{
-        margin-left: 10px;
-    }
-    .container-items-nav {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      left: 0;
-      border: none;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-    }
-  
-    .container-items-nav.open {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .container-items-nav .items-nav {
-      text-align: center;
-      padding: 10px;
-      width: 20%;
-    }
-    .back{
-        background-color: #000;
-    }
-    .back:hover{
-        background-color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      nav{
+          justify-content: space-between;
+          min-height: 100%;
+      }
+      #logo{
+          margin-left: 10px;
+      }
+      .container-items-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
         border: none;
-    }
-    .items-nav:hover{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30%;
         background-color: #000;
-    }
-  }
+      }
+    
+      .container-items-nav.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .container-items-nav  {
+        margin: 0 auto;
+        padding: 10px;
+        width: 100%;
+      }
+      .items-nav{
+        padding: 10px;
+      }
+      .back{
+          background-color: #e53939;
+      }
+      .back:hover{
+          background-color: #000;
+          border: none;
+      }
+      .items-nav:hover{
+          background-color: #000;
+      }
+}
+

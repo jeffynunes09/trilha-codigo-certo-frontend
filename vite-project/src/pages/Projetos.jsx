@@ -7,6 +7,7 @@ import { UserContext } from '../context/UserContext';
 import { ProjetoContext } from '../context/ProjetoContext';
 import { Link } from 'react-router-dom';
 import CriarProjetos from './CriarProjetos';
+import { TextLimit } from '../components/TextLimit';
 
 function Projetos() {
   const { projeto, setProjeto } = useContext(ProjetoContext);
@@ -74,7 +75,7 @@ function Projetos() {
                 <CardProjetos
                   key={projetos._id}
                   name={projetos.name}
-                  description={projetos.description}
+                  description={<TextLimit text={projetos.description} limit={200}></TextLimit>}
                   nameButton1='EDITAR'
                   nameButton='EXCLUIR'
                   onEditClick={() => handleEditClick(projetos)}

@@ -57,7 +57,7 @@ const handleClick = () => {
   return (
     
  
-     
+     <div className='container-home'>
  
         <div className='container-card'>
           
@@ -72,7 +72,7 @@ const handleClick = () => {
             />
           
         </div>
-      
+        </div>
    
  
   );

@@ -39,6 +39,16 @@
   .container-home{
     display: block;
     overflow-x: hidden;
+
+  }
+  .container-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 5px auto;
+    flex-wrap: wrap;
+   
   }
 
 }
