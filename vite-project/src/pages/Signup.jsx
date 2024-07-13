@@ -18,6 +18,7 @@ function Signup() {
 
     if (!email || !password || !name) {
       console.error('Nome, email e senha são obrigatórios');
+      alert('Nome, email e senha são obrigatórios')
       return;
     }
 
@@ -36,6 +37,7 @@ function Signup() {
       navigate('/login');
     } catch (error) {
       console.error('Erro ao realizar cadastro:', error);
+      alert('Erro ao realizar cadastro')
     }
   };
 

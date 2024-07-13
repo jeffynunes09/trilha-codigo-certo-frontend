@@ -17,6 +17,7 @@ function Login() {
 
     if (!email || !password) {
       console.error('Email e senha são obrigatórios');
+      alert('Email e senha são obrigatórios')
       return;
     }
 
@@ -36,6 +37,7 @@ function Login() {
       navigate('/');
     } catch (error) {
       console.error('Erro ao realizar login:', error);
+      alert('Usuário não encontrado')
     }
   };
 
