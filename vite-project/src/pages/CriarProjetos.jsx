@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import './CriarProjeto.css';
 import api from './api';
 import { UserContext } from '../context/UserContext';
+import Error from '../components/Error';
 
-function CriarProjetos({ title, projeto, }) {
+function CriarProjetos({ title, projeto }) {
   const [name, setName] = useState(projeto ? projeto.name : '');
   const [description, setDescription] = useState(projeto ? projeto.description : '');
+  const [limitDescription, setLimitDescription] = useState(false);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -22,6 +24,11 @@ function CriarProjetos({ title, projeto, }) {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevenir o comportamento padrão do formulário
 
+    if (description.length > 400) {
+      setLimitDescription(true);
+      return;
+    }
+
     if (!name || !description) {
       console.error('Nome ou Descrição são obrigatórios');
       return;
@@ -33,14 +40,13 @@ function CriarProjetos({ title, projeto, }) {
       let response;
       if (projeto) {
         response = await api.put(`/projects/updated/${projeto._id}`, { name, description, user });
-        navigate(`/project/findProject/${projeto._id}`)
+        navigate(`/project/findProject/${projeto._id}`);
       } else {
         response = await api.post('/projects/create', { name, description, user });
-         navigate(`/projetos`)
+        navigate(`/projetos`);
       }
 
       console.log('Resposta da API:', response.data);
-     
     } catch (error) {
       console.error('Erro ao realizar cadastro:', error);
     }
@@ -65,13 +71,19 @@ function CriarProjetos({ title, projeto, }) {
         <label className='name-input' htmlFor="description">DESCRIÇÃO DO PROJETO</label>
         <div>
           <textarea
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder='DESCRIÇÃO DO PROJETO'
+            onChange={(e) => {
+              setDescription(e.target.value);
+              if (e.target.value.length <= 400) {
+                setLimitDescription(false);
+              }
+            }}
+            placeholder='DESCRIÇÃO DO PROJETO COM NO MÁXIMO 400 PALAVRAS'
             className='textarea-custom'
             name='description'
             id='description'
             value={description}
           />
+          {limitDescription && <Error message='Limite de palavras excedido!' />}
         </div>
         <div className='container-button'>
           <button className='submit' type='submit'>Enviar</button>

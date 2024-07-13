@@ -1,15 +1,17 @@
 .description-projeto{
     color: black;
+    margin-top: -10px
 }
 
 .title-projeto{
     color: black;
+    margin-bottom: 5px;
 }
 .card {
     border: 1px solid #e53939;
     width: 300px;
-    height: 300px;
-    padding: 10px;
+    min-height: 300px;
+   
     border-radius: 5px;
     box-shadow:  2px 5px rgba(0, 0, 0, 0.699);
     display: flex;

@@ -75,7 +75,7 @@ function Projetos() {
                 <CardProjetos
                   key={projetos._id}
                   name={projetos.name}
-                  description={<TextLimit text={projetos.description} limit={200}></TextLimit>}
+                  description={<TextLimit text={projetos.description} limit={300}></TextLimit>}
                   nameButton1='EDITAR'
                   nameButton='EXCLUIR'
                   onEditClick={() => handleEditClick(projetos)}

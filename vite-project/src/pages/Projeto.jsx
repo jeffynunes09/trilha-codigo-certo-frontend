@@ -4,7 +4,7 @@ import CardProjetos from '../components/cardProjetos';
 import { ProjetoContext } from '../context/ProjetoContext';
 import { useNavigate, useParams } from 'react-router-dom';
 import api from './api';
-
+import { TextLimit } from '../components/TextLimit';
 function Projeto() {
 
   const {id} = useParams()
@@ -64,7 +64,7 @@ const handleClick = () => {
             <CardProjetos
               key={dados._id}
               name={dados.name}
-              description={dados.description}
+              description={<TextLimit text={dados.description} limit={350}/>}
               nameButton1='VOLTAR'
               nameButton='EXCLUIR'
               onDeleteClick={() => deleteProject()}
