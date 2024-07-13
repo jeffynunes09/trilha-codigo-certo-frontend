@@ -4,7 +4,7 @@ import './Login.css';
 import api from './api';
 import Cookies from 'js-cookie';
 import { UserContext } from '../context/UserContext';
-
+import Error from '../components/Error';
 function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,13 +12,24 @@ function Signup() {
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [nameError, setNameError] = useState(false);
+
   // Função para lidar com a submissão do formulário
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevenir o comportamento padrão do formulário
 
+    
+    setEmailError(!email);
+    setPasswordError(!password);
+    setNameError(!name);
+
+
+
     if (!email || !password || !name) {
       console.error('Nome, email e senha são obrigatórios');
-      alert('Nome, email e senha são obrigatórios')
+   
       return;
     }
 
@@ -47,33 +58,45 @@ function Signup() {
         <h2>CADASTRAR</h2>
         <div>
           <input
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value);
+              setNameError(false);
+            }}
             placeholder='DIGITE O SEU NOME'
             className='input'
             type='text'
             name='nome'
             id='nome'
           />
+           {nameError && <Error message="O nome é obrigatório!" />}
         </div>
         <div>
           <input
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value)
+              setEmailError(false)
+            }}
             placeholder='DIGITE O SEU EMAIL'
             className='input'
             type='text'
             name='email'
             id='email'
           />
+           {emailError && <Error message="O email é obrigatório!" />}
         </div>
         <div>
           <input
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value)
+              setPasswordError(false)
+            }}
             placeholder='DIGITE A SUA SENHA'
             className='input'
             type='password'
             name='password'
             id='password'
           />
+           {passwordError && <Error message="A senha é obrigatória!" />}
         </div>
         <div className='container-button'>
           <button className='submit' type='submit'>Enviar</button>

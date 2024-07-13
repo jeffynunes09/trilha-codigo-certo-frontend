@@ -4,20 +4,30 @@ import './Login.css';
 import api from './api';
 import Cookies from 'js-cookie';
 import { UserContext } from '../context/UserContext';
-
+import Error from '../components/Error';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { setUser} = useContext(UserContext);
   const navigate = useNavigate();
+  
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
 
   // Função para lidar com a submissão do formulário
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevenir o comportamento padrão do formulário
 
+    
+    setEmailError(!email);
+    setPasswordError(!password);  
+
+   
+
     if (!email || !password) {
       console.error('Email e senha são obrigatórios');
-      alert('Email e senha são obrigatórios')
+      
       return;
     }
 
@@ -49,23 +59,31 @@ function Login() {
         <h2>ENTRAR</h2>
         <div>
           <input
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setEmailError(false);
+            }}
             placeholder='DIGITE O SEU EMAIL'
             className='input'
             type='text'
             name='email'
             id='email'
           />
+          {emailError && <Error message="O email é obrigatório!" />}
         </div>
         <div>
           <input
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setPasswordError(false);
+            }}
             placeholder='DIGITE A SUA SENHA'
             className='input'
             type='password'
             name='password'
             id='password'
           />
+          {passwordError && <Error message="A senha é obrigatória!" />}
         </div>
         <Link to='/signup'>
           <p className='signup'>Crie sua conta</p>
@@ -77,5 +95,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;
