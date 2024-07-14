@@ -27,6 +27,6 @@ Esta aplicação é um gerenciador de projetos desenvolvido especialmente para a
 <h3>js-cookie:</h3> Biblioteca para manipulação de cookies, utilizada no gerenciamento de sessões de usuário.
 <h3>React Router DOM</h3> Biblioteca para navegação e roteamento na aplicação.
 <h3>React Icons:</h3> Biblioteca para inclusão de ícones na interface.*
-<h3>Nome do Projeto:</h3> Gerenciador de Projetos para a Comunidade Código Certo
+
 
 
