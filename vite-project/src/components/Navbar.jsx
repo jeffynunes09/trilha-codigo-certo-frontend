@@ -27,7 +27,7 @@ function Navbar() {
 
   return (
     <nav className='nav'>
-      <a href="#"><img id='logo' src={logo} alt="Logo" /></a>
+    <Link to='/'><img id='logo' src={logo} alt="Logo" /></Link>
       <div className="menu-toggle" id="mobile-menu" onClick={toggleMobileMenu}>
         <span className="bar"></span>
         <span className="bar"></span>
