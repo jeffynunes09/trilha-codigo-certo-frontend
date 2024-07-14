@@ -29,6 +29,4 @@ Esta aplicação é um gerenciador de projetos desenvolvido especialmente para a
 <h3>React Icons:</h3> Biblioteca para inclusão de ícones na interface.*
 <h3>Nome do Projeto:</h3> Gerenciador de Projetos para a Comunidade Código Certo
 
-Descrição:</h3>
-Esta aplicação é um gerenciador de projetos desenvolvido especialmente para a comunidade Código Certo. O principal objetivo do projeto é fornecer uma plataforma onde os usuários possam facilmente gerenciar seus projetos.
 
