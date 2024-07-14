@@ -1,5 +1,5 @@
 <h1>Descrição do Projeto</h1>
-<h3>Nome do Projeto</h3>: Gerenciador de Projetos para a Comunidade Código Certo
+<h3>Nome do Projeto:</h3>Gerenciador de Projetos para a Comunidade Código Certo
 
 <h3>Descrição:</h3>
 Esta aplicação é um gerenciador de projetos desenvolvido especialmente para a comunidade Código Certo. O principal objetivo do projeto é fornecer uma plataforma onde os usuários possam facilmente gerenciar seus projetos.
