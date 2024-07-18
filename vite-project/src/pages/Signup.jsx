@@ -25,13 +25,33 @@ function Signup() {
     setPasswordError(!password);
     setNameError(!name);
 
-
-
     if (!email || !password || !name) {
       console.error('Nome, email e senha são obrigatórios');
    
       return;
     }
+
+
+    function validarEmail(e) {
+      var re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+
+    validarEmail(email)
+
+    if(!validarEmail(email)){
+      console.error('digite um email valido')
+      alert('Digite um email válido!')
+      return
+    }
+
+      
+      
+    
+   
+    
+   
+    
 
     try {
       const response = await api.post('/user/create', { email, password, name });
@@ -83,6 +103,7 @@ function Signup() {
             id='email'
           />
            {emailError && <Error message="O email é obrigatório!" />}
+           
         </div>
         <div>
           <input
