@@ -1,6 +1,6 @@
 <h1>Descrição do Projeto</h1>
 <h3>Nome do Projeto:</h3>Gerenciador de Projetos para a Comunidade Código Certo
-
+ <img src="https://raw.githubusercontent.com/jeffynunes09/fot/main/WhatsApp%20Image%202024-07-21%20at%2013.18.03.jpeg?token=GHSAT0AAAAAACTWFCXNJ7PEFIJ7UX5SOCGOZU5GUMA"></img>
 <h3>Descrição:</h3>
 Esta aplicação é um gerenciador de projetos desenvolvido especialmente para a comunidade Código Certo. O principal objetivo do projeto é fornecer uma plataforma onde os usuários possam facilmente gerenciar seus projetos.
 
