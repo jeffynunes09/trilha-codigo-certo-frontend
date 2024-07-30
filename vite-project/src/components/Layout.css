@@ -1,0 +1,15 @@
+/* src/components/Layout.css */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .layout > * {
+    flex-shrink: 0;
+  }
+  
+  .layout > main {
+    flex-grow: 1;
+  }
+  
