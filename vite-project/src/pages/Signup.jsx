@@ -33,7 +33,7 @@ function Signup() {
 
 
     function validarEmail(e) {
-      var e = /\S+@\S+\.\S+/;
+      var re = /\S+@\S+\.\S+/;
       return re.test(email);
     }
 
